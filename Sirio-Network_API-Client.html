@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="SNDL-Dark" lang="en-GB">
+    <head>
+        <title>Sirio Network API - Javascript Websockets</title>
+        <!-- SNWE SEO -->
+        <meta name="description" content="[FILL THIS]">
+        <meta name="author" content="Ascellayn">
+        <!-- SNWE Embed -->
+        <meta content="[FILL THIS]" property="og:title" />
+        <meta content="[FILL THIS]" property="og:description" />
+        <meta content="https://sirio-network.com/[FILL THIS]" property="og:url" />
+        <meta content="https://sirio-network.com/root/embeds/[FILL THIS]" property="og:image" />
+        <meta content="#3769FF" data-react-helmet="true" name="theme-color" />
+        <meta name="twitter:card" content="summary_large_image">
+        <!-- SNWE External-->
+        <link rel="stylesheet" href="../root/sndl/common.css">
+        <link rel="stylesheet" href="https://sirio-network.com/root/sndl/common.css">
+        <script src="../root/js/common.js"></script>
+        <script src="https://sirio-network.com/root/js/common.js"></script>
+        <script src="../root/js/dynamicsn.js"></script>
+        <script src="https://sirio-network.com/root/js/dynamicsn.js"></script>
+        <!-- Sirio Network API -->
+        <script src="SN-API_Client.js"></script> 
+        <script src="SN-API_Hook.js"></script> 
+        <link rel="icon" type="image/x-icon" href="https://sirio-network.com/root/sn-icon.png">
+        <!-- SNWE Misc-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="background" style="background-image: url('https://sirio-network.com/root/backgrounds/static/blacklight.png');"></div>
+        <div class="background" style="background-image: url('https://sirio-network.com/root/backgrounds/static/starlight.jpg');"></div>
+        
+        <div class="root">
+            <div class="user">
+                <div>
+                    <h1>Flashcord API JavaScript Client</h1>
+                    <div class="SNDL-Quote SNDL-BC_Warning">
+                        <div>
+                            <h2>NOTICE:</h2>
+                            <p>The JavaScript Client isn't really meant to be used outside of the Flashcord Store to request certain things.</p>
+                            <p>Please use the Python Client with sockets (WebSockets not recommended, but it can work) if you want to automate things.</p>
+                            <p>Remind yourself also that the JavaScript Client is way. WAY. Dumber than its Python variant due to my inexperience with JavaScript.</p>
+                            <p>Furthermore this client is not supposed to be used for anything other than "ADD_STAT" API Requests (hence why it's so dumb).</p>
+                        </div>
+                    </div>
+                    <div class="SNDL-Quick_FlexGrid" style="min-width: 50vw;">
+                        <input class="SNDL-SearchInput" id="API_Input" type="text" placeholder="Insert API Request" style="width: calc(100% - 50%);">
+                        <button class="SNDL-BC_Warning">
+                            <a href="#" onclick="FlashstoreAPI_Requester()">
+                                <p>Initiate Request</p>
+                            </a>
+                        </button>
+                    </div>
+                    <div>
+                        <h3 id="API_Result" style="text-align: center;">Result:</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageloader" style="opacity: 1;">
+            <img src="https://sirio-network.com/root/cublodes_light.gif">
+            <h3>⚠️ Javascript is required to load this page.</h3>
+        </div>
+    </body>
+</html>
