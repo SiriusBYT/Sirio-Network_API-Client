@@ -1,8 +1,8 @@
 /* Sirio Network API*/
 function SirioAPI(API_Request) {
     return new Promise(function(Success) {
-        // const Trinity = new WebSocket("wss://trinity.sirio-network.com");
-         const Trinity = new WebSocket("wss://localhost");
+        const Trinity = new WebSocket("wss://trinity.sirio-network.com");
+        // const Trinity = new WebSocket("wss://localhost");
         Trinity.onopen = function(e) {
             log(`[SN-API] Sending Request "${API_Request}"`)
             Trinity.send(API_Request);
