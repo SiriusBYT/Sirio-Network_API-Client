@@ -2,6 +2,8 @@ import socket
 import time 
 import math
 
+# RECYCLED CODE GO BRRRRRRRRRRRRRRRRRRRRRR THIS IS TEMPORARLY WHILE I TEST THIS HOT GARBAGE
+
 def Flashcord_API_Client(API_Request):
     Request_Start = time.time()
     Debug_Mode = True
@@ -17,6 +19,7 @@ def Flashcord_API_Client(API_Request):
     Packet_Size = 8192
     Server = socket.socket()
     Client_Version = "PoC-240804"
+    Client_API_Version = ""
 
     ASCII_Banner = "\n░█▀▀░█░░░█▀█░█▀▀░█░█░█▀▀░█▀█░█▀▄░█▀▄░░░█▀█░█▀█░▀█▀░░░█▀▀░█░░░▀█▀░█▀▀░█▀█░▀█▀\n\
 ░█▀▀░█░░░█▀█░▀▀█░█▀█░█░░░█░█░█▀▄░█░█░░░█▀█░█▀▀░░█░░░░█░░░█░░░░█░░█▀▀░█░█░░█░\n\
@@ -61,9 +64,10 @@ def Flashcord_API_Client(API_Request):
     except socket.error as Error_Info: WriteLog(f'ERROR: Failed to connect to the Flashstore API! \n[ERROR TRACEBACK]\n{Error_Info}', False); return "CONNECTION_FAILURE"
 
     WriteLog(f'SUCCESS: Connected to {Server_Address}:{Server_Port}! (Latency: {Server_Latency})',False)
+    """
     WriteLog(f'INFO: Requesting API Version {Client_API_Version}...',True)
     try: 
-        #Send(Client_API_Version); RECYCLED CODE GO BRRRRRRRRRRRRRRRRRRRRRR THIS IS TEMPORARLY WHILE I TEST THIS HOT GARBAGE
+        Send(Client_API_Version);
         Server_Data = Receive_Data()
     except Exception as Error_Info: WriteLog(f'[ERROR] Failed to send Client API Version to the server! \n[ERROR TRACEBACK]\n{Error_Info}", False)',False); return "TIMEOUT"
     match Server_Data:
@@ -73,6 +77,7 @@ def Flashcord_API_Client(API_Request):
         case "ALREADY_CONNECTED": WriteLog(f"[ERROR] The server told us we're already connected to it!", False); return "ALREADY_CONNECTED"
         case "OUTDATED_SERVER": WriteLog(f"[WARNING] The server told us our API Version is newer than the server's!", False)
         case "OK": WriteLog(f"[OK] We sent a valid API Version.", True)
+    """
     try:
         WriteLog(f'INFO: Requesting "{API_Request}".',True); Send(API_Request); Server_Data = Receive_Data()
         match Server_Data:
@@ -84,3 +89,6 @@ def Flashcord_API_Client(API_Request):
             case "": WriteLog(f"[ERROR] The server sent us an empty response!",False); return "EMPTY_RESPONSE"
             case _: WriteLog(f'[SUCCESS] Received {Server_Data} for our request!',False); return Server_Data
     except Exception as Error_Info: WriteLog(f'[ERROR] Failed to send our API request! \n[ERROR TRACEBACK]\n{Error_Info}", False)',False); return "TIMEOUT"
+
+
+Flashcord_API_Client("FC-API://GET/BITCHES")
