@@ -23,5 +23,6 @@ def SirioAPI(Request,Server,Port):
 
     Send(Request)
     return Receive_Data(),Ping
-
-SirioAPI("Echo://ThisIsARIDICULOUSLYLARGEREQUEST/BecauseINeedToTestIfThisFucksUp/ANYWAYS/HowDoIGetBitches???","trinity.sirio-network.com",1407)
+    
+while True:
+    print(SirioAPI(input("api: "),"trinity_raw.sirio-network.com",1407))
