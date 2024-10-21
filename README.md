@@ -6,13 +6,13 @@ Raw Sockets Python and Websockets Javascript Clients for the Sirio Network API
 ### Usage
 
 **Rawsockets Client**
-- Simply run SN-API_RSC.py, the Rawsockets Shell will then launch and by default connect to the Trinity Relay.
+- Simply run SNAPI_RSC.py, the Rawsockets Shell will then launch and by default connect to the Trinity Relay.
 - You may get a list of commands with "help".
 - This file may also be used as a module and allows finer control.
 
 
 **Rawsockets Module**
-- Import SN_APIC.py and then use the SirioAPI function.
+- Import SNAPI_CM.py and then use the SirioAPI function.
 - This file is mostly only used by the Trinity Relay itself (for forwarding requests), it only sends a full on request (sends then receive, nothing else).
 
 
