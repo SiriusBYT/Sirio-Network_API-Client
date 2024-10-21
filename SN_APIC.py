@@ -3,6 +3,7 @@ import socket, math, time
 def SirioAPI(Request,Server,Port):
     Packet_Size = 8192
     Socket = socket.socket()
+    Socket.settimeout(1)
 
     def Log(Log):
         CTime = time.localtime()
@@ -17,12 +18,9 @@ def SirioAPI(Request,Server,Port):
     def Receive_Data():
         try: Response = Socket.recv(Packet_Size).decode(); return Response
         except Exception as Error_Info: Log(f"[Error - Receiving] {Error_Info}"); return
-    
+
     Ping = time.monotonic()*1000; Socket.connect((Server, Port))
     Ping = math.floor(((time.monotonic()*1000) - Ping))
 
     Send(Request)
     return Receive_Data(),Ping
-    
-while True:
-    print(SirioAPI(input("api: "),"trinity_raw.sirio-network.com",1407))
